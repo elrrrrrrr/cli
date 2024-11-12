@@ -69,7 +69,7 @@ class Arborist extends Base {
     const timeEnd = time.start('arborist:ctor')
     super(options)
     this.options = {
-      nodeVersion: process.version,
+      nodeVersion: process.env.nodeVersion || process.version,
       ...options,
       Arborist: this.constructor,
       binLinks: 'binLinks' in options ? !!options.binLinks : true,
